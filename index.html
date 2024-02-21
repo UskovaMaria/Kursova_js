@@ -9,14 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Yeseva+One&display=swap" rel="stylesheet">
   <title>Document</title>
-  
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  
   <header class="header">
-    <div class="conteiner header__iner">
+    <div class="container header__iner">
       <a class="logo" href="#">
         <img class="logo__img" src="images/logo-header.png" alt="">
       </a>
@@ -54,7 +52,7 @@
   </header>
   <main class="main">
     <section class="top">
-      <div class="conteiner top__inner">
+      <div class="container top__inner">
         <div class="top__content">
           <h3 class="top__title">
             Створіть атмосферу затишку та гармонії!
@@ -76,9 +74,9 @@
       </div>
     </section>
     <section class="about">
-      <div class="conteiner about__inner">
+      <div class="container about__inner">
         <div class="about__content">
-         <h2 class="about__title">
+         <h2 class="about__title title">
           Про нас
          </h2>
          <p class="about__text">
@@ -92,20 +90,99 @@
           і цей вид воску є екологічно чистим та безпечним для здоров'я.
          </p> 
         </div>
-        <ul class="about__list">
+        <ul class="about__list section--decor">
           <li class="about__item">
-            <img class="about__item-img" src="images/about-1.jpg" alt="">
+            <img class="about__item-img about__item-img--1" src="images/about-1.jpg" alt="">
             <p class="about__item-text">Насолоджуйтеся моментом</p>
           </li>
           <li class="about__item">
-            <img class="about__item-img" src="images/about-2.png" alt="">
+            <img class="about__item-img about__item-img--2" src="images/about-2.png" alt="">
             <p class="about__item-text">Створіть улюблену атмосферу</p>
           </li>
           <li class="about__item">
-            <img class="about__item-img" src="images/about-3.jpg" alt="">
+            <img class="about__item-img about__item-img--3" src="images/about-3.jpg" alt="">
             <p class="about__item-text">Виготовлені з любов'ю</p>
           </li>
         </ul>
+      </div>
+    </section>
+    <section class="products section">
+      <div class="container section__inner">
+        <div class="products__descr section__descr">
+          <h2 class="products__title title">
+            Наші товари
+          </h2>
+          <p class="products__text section__text">
+            Ми використовуємо тільки найкращі якісні матеріали: 
+            соєвий віск, віскові барвники, високоякісні ароматичні 
+            олії та бавовняні фітільці. Відтінки свічок дуже гармонійно 
+            поєднуються з ароматом, створюючи незабутню атмосферу у вашому домі.
+          </p>
+        </div>
+        <div class="products__content section__content-descr section--decor {
+          position: relative;
+      }
+      
+      .section--decor::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-image: url(../images/section-decor.png);
+          width: 22px;
+          height: 30px;
+      }
+      
+      .section--decor::after {
+          content: '';
+          position: absolute;
+          left: 21px;
+          bottom: 10px;
+          background-color: #7B6152;
+          width: 1000%;
+          height: 1px;
+      }">
+          <div class="products__item">
+            <img src="images/product-1.jpg" alt="" class="products__item-img">
+            <p class="products__item-price">10$</p>
+            <h4 class="products__item-title">"Сердечко кохання"</h4>
+            <p class="products__item-text">
+              Запах: ніжний аромат троянди та ванілі. 
+              Для чого: для атмосфери романтичного настрою
+            </p>
+            <button class="button">Купити</button>
+          </div>
+          <div class="products__item">
+            <img src="images/product-2.jpg" alt="" class="products__item-img">
+            <p class="products__item-price">20$</p>
+            <h4 class="products__item-title">"Вихір кохання"</h4>
+            <p class="products__item-text">
+              Запах: ніжний аромат лаванди. 
+              Для чого: для створення атмосфери затишку 
+            </p>
+            <button class="button">Купити</button>
+          </div>
+          <div class="products__item">
+            <img src="images/product-3.jpg" alt="" class="products__item-img">
+            <p class="products__item-price">10$</p>
+            <h4 class="products__item-title">""Веселка""</h4>
+            <p class="products__item-text">
+              Запах: Свіжий аромат лайма. 
+              Для чого: для енергії та свіжості в приміщені.
+            </p>
+            <button class="button">Купити</button>
+          </div>
+          <div class="products__item">
+            <img src="images/product-4.jpg" alt="" class="products__item-img">
+            <p class="products__item-price">10$</p>
+            <h4 class="products__item-title">"Жіноча чарівність"</h4>
+            <p class="products__item-text">
+              Запах: ніжний аромат лаванди та фрезій. 
+              Для чого: для затишку та комфорту.
+            </p>
+            <button class="button">Купити</button>
+          </div>
+        </div>
       </div>
     </section>
   </main>

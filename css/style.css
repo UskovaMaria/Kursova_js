@@ -35,11 +35,54 @@ button {
     cursor: pointer;
 }
 
-.conteiner {
+.title {
+    margin-bottom: 15px;
+    font-size: 40px;
+    font-family: 'Yeseva One', cursive;
+    font-weight: 400;
+}
+
+.container {
     max-width: 1180px;
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
+}
+
+.section {
+    padding-bottom: 150px;
+}
+
+.button {
+    padding: 18px 54px;
+    background-color: #FFBD59;
+    font-family: 'Comfortaa', cursive;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.section--decor {
+    position: relative;
+}
+
+.section--decor::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: url(../images/section-decor.png);
+    width: 22px;
+    height: 30px;
+}
+
+.section--decor::after {
+    content: '';
+    position: absolute;
+    left: 21px;
+    bottom: 10px;
+    background-color: #7B6152;
+    width: 1000%;
+    height: 1px;
 }
 
 .menu__btn {
@@ -99,7 +142,6 @@ button {
 
 .top {
     padding: 40px 0 150px;
-    
 }
 
 .top__inner {
@@ -115,6 +157,7 @@ button {
     font-size: 30px;
     font-family: 'Yeseva One', cursive;
     margin-bottom: 15px;
+    font-weight: 400;
 }
 
 .top__text {
@@ -137,8 +180,9 @@ button {
 
 .about {
     background-color: #A5978E;
-    padding: 50px 0 60px;
+    padding: 50px 0;
     color: #FAFAFA;
+    margin-bottom: 150px;
 }
 
 .about__inner {
@@ -147,12 +191,7 @@ button {
 }
 
 .about__content {
-    flex-basis: 370px;
-}
-
-.about__title {
-    margin-bottom: 15px;
-    font-size: 40px;
+    min-width: 370px;
 }
 
 .about__text {
@@ -165,22 +204,7 @@ button {
     gap: 0 20px;
     padding-left: 110px;
     padding-bottom: 48px;
-    flex-basis: 930px;
-    position: relative;
-}
-
-.about__list::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-image: url(../images/section-decor.png);
-    width: 22px;
-    height: 30px;
-}
-
-.about__item {
-
+    width: 930px;
 }
 
 .about__item-img {
@@ -190,6 +214,59 @@ button {
 .about__item-text {
     font-size: 11px;
 }
+
+.section__inner {
+    display: grid;
+    grid-template-columns: 370px auto;
+}
+
+.section__content-descr {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-bottom: 92px;
+}
+
+.products__content {
+    gap: 50px 50px;
+}
+
+.products__item {
+    width: 290px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.products__item-img {
+    margin-bottom: 8px;
+}
+
+.products__item-price {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-family: 'Yeseva One', cursive;
+}
+
+.products__item-title {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-family: 'Yeseva One', cursive;
+    font-weight: 400;
+}
+
+.products__item-text {
+    margin-bottom: 27px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.button {
+    padding: 18px 54px;
+    background-color: #FFBD59;
+    font-family: 'Comfortaa', cursive;
+    font-size: 14px;
+    font-weight: 600;
+}
+
 
 
 
@@ -249,6 +326,12 @@ button {
     .top__text {
         margin-bottom: 30px;
     }
+    .about__content {
+        min-width: 300px;
+    }
+    .about__list {
+        padding-left: 20px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -295,6 +378,35 @@ button {
     }
     .top__img {
         left: 180px;
+    }
+    .about__content {
+        min-width: 200px;
+    }
+    .title {
+        font-size: 15px;
+    }
+    .about__title {
+        margin-bottom: 20px;
+    }
+    .about__list {
+        margin-left: 27px;
+        padding-bottom: 33px;
+        gap: 0 10px;
+    }
+    .about__item-text {
+        font-size: 6px;
+    }
+    .about__item-img {
+        margin-bottom: 6px;
+    }
+    .about__item-img--1 {
+        width: 120px;
+    }
+    .about__item-img--2 {
+        width: 190px;
+    }
+    .about__item-img--3 {
+        width: 120px;
     }
 }
 
@@ -368,6 +480,30 @@ button {
     .top {
         padding: 30px 0 50px;
     }
+    .about__content {
+        min-width: 170px;
+    }
+    .about__list {
+        margin-left: 0;
+        padding-left: 10px;
+    }
+    .about__item-text {
+        display: none;
+    }
+    .about__item-img--1,
+    .about__item-img--3 {
+        width: 80px;
+    }
+    .about__item-img--2 {
+        width: 140px;
+    }
+    .about__list {
+        gap: 0 5px;
+        align-items: flex-end;
+    }
+    .about__inner {
+        align-items: flex-end;
+    }
 }
 
 @media (max-width: 360px) {
@@ -390,7 +526,30 @@ button {
     }
     .top__text {
         font-size: 10px;
+    }
+    body {
+        font-size: 8px;
     } 
+    .about__content {
+        min-width: 233px;
+    }
+    .title {
+        margin-bottom: 10px;
+    }
+    .about__list {
+        padding-left: 12px;
+        margin-left: 12px;
+        gap: 15px;
+        padding-bottom: 30px;
+    }
+    .about {
+        padding-top: 25px;
+        padding-bottom: 10px;
+    }
+    .about__item-img--2 {
+        display: none;
+    }
+    
 }
 
 
