@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Yeseva+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -28,7 +31,7 @@
         </button>
         <ul class="menu__list header__menu-list">
           <li class="menu__list-item">
-            <a class="menu__list-link"  href="#">Про нас</a>
+            <a class="menu__list-link" href="#">Про нас</a>
           </li>
           <li class="menu__list-item">
             <a class="menu__list-link" href="#">Каталог</a>
@@ -48,6 +51,15 @@
         </ul>
       </nav>
       <a class="phone" href="tel:+4565789876">+45 65 78 98 76</a>
+      <div class="cart cart-btn" id="cartIcon">
+        <i class="fa-solid fa-basket-shopping"></i>
+      </div>
+      <div id="overlay" class="overlay"></div>
+      <div id="cartPopup" class="cart-popup">
+        <div class="close-btn" onclick="closeCartPopup()">×</div>
+        <ul id="cartItemList" class="cart-item-list"></ul>
+      </div>
+    </div>
     </div>
   </header>
   <main class="main">
@@ -58,8 +70,8 @@
             Створіть атмосферу затишку та гармонії!
           </h3>
           <p class="top__text">
-            Створіть особливу атмосферу у своєму домі 
-            з нашою екологічно чистою та якісною продукцією 
+            Створіть особливу атмосферу у своєму домі
+            з нашою екологічно чистою та якісною продукцією
             зі 100% натуральної соєвого воску.
           </p>
           <button class="top__buy">
@@ -76,19 +88,19 @@
     <section class="about">
       <div class="container about__inner">
         <div class="about__content">
-         <h2 class="about__title title">
-          Про нас
-         </h2>
-         <p class="about__text">
-          Богдан творець бренду який завжди зацікавлений у виготовленні 
-          різноманітних речей вдома. Він регулярно експериментував з 
-          різними матеріалами та інструментами, спробувавши свої сили у 
-          багатьох галузях, включаючи виготовлення свічок.
-         </p>
-         <p class="about__text">
-          Ссоєвий віск виготовляють із соєвих бобів, що зрощуються в Данії, 
-          і цей вид воску є екологічно чистим та безпечним для здоров'я.
-         </p> 
+          <h2 class="about__title title">
+            Про нас
+          </h2>
+          <p class="about__text">
+            Богдан творець бренду який завжди зацікавлений у виготовленні
+            різноманітних речей вдома. Він регулярно експериментував з
+            різними матеріалами та інструментами, спробувавши свої сили у
+            багатьох галузях, включаючи виготовлення свічок.
+          </p>
+          <p class="about__text">
+            Ссоєвий віск виготовляють із соєвих бобів, що зрощуються в Данії,
+            і цей вид воску є екологічно чистим та безпечним для здоров'я.
+          </p>
         </div>
         <ul class="about__list section--decor">
           <li class="about__item">
@@ -113,74 +125,52 @@
             Наші товари
           </h2>
           <p class="products__text section__text">
-            Ми використовуємо тільки найкращі якісні матеріали: 
-            соєвий віск, віскові барвники, високоякісні ароматичні 
-            олії та бавовняні фітільці. Відтінки свічок дуже гармонійно 
+            Ми використовуємо тільки найкращі якісні матеріали:
+            соєвий віск, віскові барвники, високоякісні ароматичні
+            олії та бавовняні фітільці. Відтінки свічок дуже гармонійно
             поєднуються з ароматом, створюючи незабутню атмосферу у вашому домі.
           </p>
         </div>
-        <div class="products__content section__content-descr section--decor {
-          position: relative;
-      }
-      
-      .section--decor::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          background-image: url(../images/section-decor.png);
-          width: 22px;
-          height: 30px;
-      }
-      
-      .section--decor::after {
-          content: '';
-          position: absolute;
-          left: 21px;
-          bottom: 10px;
-          background-color: #7B6152;
-          width: 1000%;
-          height: 1px;
-      }">
-          <div class="products__item">
-            <img src="images/product-1.jpg" alt="" class="products__item-img">
+        <div class="products__content section__content-descr section--decor">
+          <div class="products__item" data-product-id="1">
+            <img class="products__item-img" src="images/product-1.jpg" alt="">
             <p class="products__item-price">10$</p>
             <h4 class="products__item-title">"Сердечко кохання"</h4>
             <p class="products__item-text">
-              Запах: ніжний аромат троянди та ванілі. 
+              Запах: ніжний аромат троянди та ванілі.
               Для чого: для атмосфери романтичного настрою
             </p>
-            <button class="button">Купити</button>
+            <button class="button buy-btn" data-product-id="1">Купити</button>
           </div>
-          <div class="products__item">
-            <img src="images/product-2.jpg" alt="" class="products__item-img">
+          <div class="products__item" data-product-id="2">
+            <img class="products__item-img" src="images/product-2.jpg" alt="">
             <p class="products__item-price">20$</p>
             <h4 class="products__item-title">"Вихір кохання"</h4>
             <p class="products__item-text">
-              Запах: ніжний аромат лаванди. 
-              Для чого: для створення атмосфери затишку 
+              Запах: ніжний аромат лаванди.
+              Для чого: для створення атмосфери затишку
             </p>
-            <button class="button">Купити</button>
+            <button class="button buy-btn" data-product-id="2">Купити</button>
           </div>
-          <div class="products__item">
-            <img src="images/product-3.jpg" alt="" class="products__item-img">
+          <div class="products__item" data-product-id="3">
+            <img class="products__item-img" src="images/product-3.jpg" alt="">
             <p class="products__item-price">10$</p>
             <h4 class="products__item-title">""Веселка""</h4>
             <p class="products__item-text">
-              Запах: Свіжий аромат лайма. 
+              Запах: Свіжий аромат лайма.
               Для чого: для енергії та свіжості в приміщені.
             </p>
-            <button class="button">Купити</button>
+            <button class="button buy-btn" data-product-id="3">Купити</button>
           </div>
-          <div class="products__item">
-            <img src="images/product-4.jpg" alt="" class="products__item-img">
+          <div class="products__item" data-product-id="4">
+            <img class="products__item-img" src="images/product-4.jpg" alt="">
             <p class="products__item-price">10$</p>
             <h4 class="products__item-title">"Жіноча чарівність"</h4>
             <p class="products__item-text">
-              Запах: ніжний аромат лаванди та фрезій. 
+              Запах: ніжний аромат лаванди та фрезій.
               Для чого: для затишку та комфорту.
             </p>
-            <button class="button">Купити</button>
+            <button class="button buy-btn" data-product-id="4">Купити</button>
           </div>
         </div>
       </div>
