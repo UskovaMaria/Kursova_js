@@ -150,6 +150,64 @@ button {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    max-height: 80vh; /* встановлюємо максимальну висоту попапу, щоб забезпечити можливість прокрутки */
+    overflow-y: auto; /* включаємо вертикальну прокрутку */
+}
+
+.cart-popup-title {
+    font-weight: bold;
+    border-bottom: 1px solid silver;
+    margin-bottom: 20px;
+
+}
+
+.cart-item-list {
+    display: grid;
+    gap: 20px;
+}
+
+.cart-item-list li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid silver;
+}
+
+.cart-item-img {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.cart-item-details {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.cart-item-name {
+    min-width: 145px;
+    text-align: center;
+}
+
+.cart-item-quantity,
+.cart-item-quantity span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-btn {
+    font-size: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.cart-item-quantity span {
+    border: 1px solid silver;
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
 }
 
 .overlay {
@@ -295,6 +353,7 @@ button {
     margin-bottom: 27px;
     font-size: 12px;
     font-weight: 400;
+    height: 45px;
 }
 
 .button {

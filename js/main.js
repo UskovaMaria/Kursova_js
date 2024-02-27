@@ -34,7 +34,7 @@ const overlay = document.getElementById('overlay');
 const cartPopup = document.getElementById('cartPopup');
 const cartItemList = document.getElementById('cartItemList');
 const closeBtn = document.querySelector('.close-btn');
-const cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let cartItems = 0;
 
 menuBtn.addEventListener('click', () => {
@@ -61,6 +61,8 @@ closeBtn.addEventListener('click', closeCartPopup);
 function closeCartPopup() {
     overlay.style.display = 'none';
     cartPopup.style.display = 'none';
+
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 function updateCartPopup() {
@@ -73,12 +75,12 @@ function updateCartPopup() {
             <img src="${item.img}" class="cart-item-img">
             <div class="cart-item-details">
                 <p class="cart-item-name">${item.name}</p>
-                <p class="cart-item-price">${item.price}</p>
                 <div class="cart-item-quantity">
-                    <button class="quantity-btn" onclick="changeQuantity(${item.id}, 'decrease')">-</button>
+                    <button class="quantity-btn" onclick="changeQuantity(${item.id}, 'decrease')"><i class="fa-solid fa-plus"></button>
                     <span>${item.quantity}</span>
-                    <button class="quantity-btn" onclick="changeQuantity(${item.id}, 'increase')">+</button>
+                    <button class="quantity-btn" onclick="changeQuantity(${item.id}, 'increase')"><i class="fa-solid fa-minus"></button>
                 </div>
+                <p class="cart-item-price">${item.price}</p>
             </div>
         `;
 
@@ -121,6 +123,8 @@ buyButtons.forEach(button => {
 
         cartItems++;
         updateCartIcon();
+
+        localStorage.setItem('cart', JSON.stringify(cart));
     });
 });
 
