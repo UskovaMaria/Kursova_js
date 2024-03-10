@@ -420,6 +420,43 @@ button {
     font-weight: 600;
 }
 
+.steps__list {
+    gap: 70px 25px;
+    counter-reset: number;
+}
+
+.steps__item {
+    display: flex;
+    gap: 40px;
+    list-style-type: none;
+    position: relative;
+}
+
+.steps__item::before {
+    counter-increment: number;
+    content: '0'counter(number);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 30px;
+    color: #bea495;
+    font-family: 'Yeseva One', cursive;
+}
+
+.steps__item:nth-child(n+10):before {
+    content: counter(number);
+}
+
+.steps__item.steps__item--even::before {
+    left: auto;
+    right: 0;
+}
+
+.steps__item-text {
+    flex-basis: 174px;
+    padding-bottom: 40px;
+}
+
 
 
 
@@ -458,7 +495,14 @@ button {
 
 
 
-
+@media (max-width: 1050px) {
+    .steps__list {
+        gap: 37px 35px;
+    }
+    .steps__item {
+        gap: 0 30px;
+    }
+}
 
 
 @media (max-width: 1000px) {
@@ -494,6 +538,28 @@ button {
     }
     .section__text {
         font-size: 10px;
+    }
+}
+
+@media (max-width: 980px) {
+    .steps__title {
+        font-size: 35px;
+    }
+    .steps__list {
+        gap: 37px 35px;
+    }
+    .steps__item {
+        gap: 0 20px;
+    }
+    .steps__item-img {
+        width: 85px;
+        object-fit: cover;
+    }
+    .steps__item-text {
+        font-size: 8px;
+    }
+    .steps__item::before {
+        font-size: 20px;
     }
 }
 
@@ -718,6 +784,21 @@ button {
         margin: 0 auto 30px;
         width: 300px;
     }
+    .steps__list {
+        gap: 25px 40px;
+    }
+}
+
+@media (max-width: 420px) {
+    .steps__list {
+        gap: 20px 25px;
+    }
+    .steps__item {
+        gap: 0 16px;
+    }
+    .steps__item-img {
+        width: 66px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -725,7 +806,6 @@ button {
         left: auto;
         right: 0;
         top: -24px;
-        
     } 
     .top__img-l {
         width: 162px; 
@@ -789,6 +869,9 @@ button {
     }
     .products__item-title {
         margin-bottom: 16px;
+    }
+    .steps__item-text {
+        font-size: 6px;
     }
 }
 
