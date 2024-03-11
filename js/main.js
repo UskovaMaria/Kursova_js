@@ -23,6 +23,20 @@ const products = [
         img: 'images/product-4.jpg',
         price: 10,
     },
+    {
+        id: 5,
+        name: 'Основи виготовлення свічок',
+        img: 'images/course-1.jpg',
+        price: 40,
+
+    },
+    {
+        id: 6,
+        name: 'Мистецтво ароматерапії',
+        img: 'images/course-2.jpg',
+        price: 40,
+
+    },
 ];
 
 const menuBtn = document.querySelector('.menu__btn');
