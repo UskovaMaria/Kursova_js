@@ -252,3 +252,28 @@ function closeCartPopup() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+const swiperOne = new Swiper('.feedback__slider', {
+    loop: true,
+  
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+
+const swiperTwo = new Swiper('.certificates__slider', {
+    loop: true,
+
+    slidesPerView: "3",
+      spaceBetween: 20,
+
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+
+  
