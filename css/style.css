@@ -188,7 +188,7 @@ button {
 }
 
 .cart-item-name {
-    min-width: 145px;
+    width: 145px;
     text-align: center;
 }
 
